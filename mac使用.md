@@ -43,12 +43,20 @@ brew search node
 ```
 brew install node
 ```
+这种安装方法还是比较麻烦的，安装完成之后还要设置环境变量，还要设置软连接，比较麻烦，最好的做法，直接去 node 官网下载安装包手动安装。
 
-这种
-export CPPFLAGS="-I/usr/local/opt/node@12/include"方式
-export CPPFLAGS="-I/usr/local/opt/node@12/include"
+## 设置 git Tab 键提示功能
+git 安装后直接使用 tab 功能不能提示，需要进行简单的设置才行，有两种方法，这里只写一种最简单高效的方式：
+1. 首先下载自动补齐脚本，在终端输入使用 curl 命令如下：
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+2. 编辑 ~/.bash_profile 文件，在最后增加如下代码。如果没有该文件，就新建一个
+```
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
+fi
+```
+3. 重启终端，愉快地使用补全功能吧
 
- 
  
  
  
