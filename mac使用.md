@@ -45,7 +45,7 @@ brew install node
 ```
 这种安装方法还是比较麻烦的，安装完成之后还要设置环境变量，还要设置软连接，比较麻烦，最好的做法，直接去 node 官网下载安装包手动安装。
 
-## 设置 git Tab 键提示功能
+## 设置 git Tab 键补全功能
 git 安装后直接使用 tab 功能不能提示，需要进行简单的设置才行，有两种方法，这里只写一种最简单高效的方式：
 1. 首先下载自动补齐脚本，在终端输入使用 curl 命令如下：
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
