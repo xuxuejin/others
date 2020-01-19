@@ -15,3 +15,46 @@ which ruby
 或
 ruby -v
 ```
+使用官方的安装方法：/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 并不一定能正常安装，需要科学上网才行。
+
+解决办法：
+1 更换国内的镜像(第一次使用的更换镜像，也出现过问题，并不能保证一次安装成功)
+2 本地安装法
+ * 在浏览器输入https://raw.githubusercontent.com/Homebrew/install/master/install（第一次可能打不开，多刷几次）
+ * 保存网页的内容于任意路径，并命名为 brew_install.rb，记住保存的路径
+ * 进入 brew_install.rb 保存的路径，在终端输入指令：ruby brew_install.rb
+ 
+ 按照上面的方法2安装，就可以成功安装，但是在安装过程中可能还会遇到一个问题：Git error: RPC failed; curl 56 LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 54，这是由于 git 在 pull 或者 push 大文件造成的提交或者拉取失败。
+ 
+ 解决方法：git config --global http.postBuffer 1048576000 （推荐1048576000 设置过小，还需要重新设置）
+ 
+ 至此，brew 就能彻底安装成功，检验是否已经正确安装：brew -v （查看版本号）
+ 
+ ## node的安装与卸载
+ 直接去 node 官网下载安装包也可能正常安装 node，但是既然已经安装 brew 了，不妨试试 brew 如何安装 node
+ 
+ * 卸载 node （pkg卸载）
+ sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}
+ 
+ * 查看包文件
+brew search node
+
+* 安装 node
+```
+brew install node
+```
+
+这种
+export CPPFLAGS="-I/usr/local/opt/node@12/include"方式
+export CPPFLAGS="-I/usr/local/opt/node@12/include"
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
